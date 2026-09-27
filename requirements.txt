@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+pillow
+opencv-python
+tqdm
+jupyter
+ipykernel
+ultralytics
+torch
+torchvision
+huggingface_hub

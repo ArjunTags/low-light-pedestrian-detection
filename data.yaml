@@ -1,0 +1,8 @@
+path: /home/arjun/lli-pedestrian/data/yolo
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: person
