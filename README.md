@@ -1,6 +1,6 @@
 # Low-Light Pedestrian Detection
 
-A low-light pedestrian detection pipeline using Zero-DCE image enhancement and YOLOv8n, trained on the visible-light portion of the LLVIP dataset.
+A low-light pedestrian detection pipeline using Zero-DCE image enhancement and YOLO11 (`yolo11n.pt`), trained on the visible-light portion of the LLVIP dataset.
 
 ## Project Overview
 
@@ -19,9 +19,9 @@ YOLO annotation conversion
         ↓
 Train/validation/test split
         ↓
-YOLOv8n pedestrian detection
+YOLO11 pedestrian detection
         ↓
-Evaluation and PDF reporting
+Evaluation and reporting
 ```
 
 ## Object
@@ -59,25 +59,12 @@ Dataset statistics:
 
 ### Object Detection
 
-- YOLOv8n
+- YOLO11 (`yolo11n.pt`)
 - Image size: 640 × 640
 - Epochs: 50
 - Batch size: 4
-- GPU: NVIDIA RTX 4060 Laptop GPU
 - Dataset class: `person`
-
-## Results
-
-Final validation results from the completed YOLOv8n training:
-
-| Metric | Result |
-|---|---:|
-| Precision | 0.926 |
-| Recall | 0.876 |
-| mAP50 | 0.933 |
-| mAP50-95 | 0.536 |
-
-These values are validation results from the completed training run. The notebook also evaluates the model on the held-out test set.
+- TensorBoard logging enabled in notebook workflow
 
 ## Repository Contents
 
@@ -88,14 +75,8 @@ These values are validation results from the completed training run. The noteboo
 │   └── 220185_yolo_box.jpg
 ├── notebooks/
 │   └── CO1_1_LLI_Pedestrian.ipynb
-├── reports/
-│   ├── CO1_1_LLI_Results.pdf
-│   └── CO1_1_Data_Analysis.pdf
-├── results/
-│   ├── results.png
-│   ├── confusion_matrix.png
-│   └── confusion_matrix_normalized.png
 ├── data.yaml
+├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
@@ -119,9 +100,7 @@ source env/bin/activate
 ### 3. Install dependencies
 
 ```bash
-pip install torch torchvision ultralytics \
-  opencv-python pillow numpy pandas matplotlib \
-  tqdm jupyter ipykernel
+pip install -r requirements.txt
 ```
 
 ### 4. Download LLVIP
@@ -170,15 +149,22 @@ The notebook contains the complete process for:
 - Zero-DCE enhancement;
 - XML-to-YOLO conversion;
 - dataset splitting;
-- YOLOv8 training;
-- test evaluation;
-- result visualization;
-- PDF report generation.
+- YOLO11 training using `yolo11n.pt`;
+- validation and held-out test evaluation;
+- confusion matrix generation (`confusion_matrix.png`, `confusion_matrix_normalized.png`);
+- TensorBoard launch instructions for YOLO11 logs;
+- sample prediction visualization.
 
-The expensive processing stages are controlled by notebook flags so they can be enabled intentionally.
+Generated model outputs are written under:
+
+```text
+/home/arjun/lli-pedestrian/runs/
+```
+
+These run artifacts are not tracked in this repository by default.
 
 ## References
 
 - LLVIP dataset: low-light visible-infrared paired pedestrian dataset
 - Zero-DCE: low-light image enhancement
-- Ultralytics YOLO: object detection framework
+- Ultralytics YOLO11: object detection framework

@@ -10,3 +10,4 @@ ultralytics
 torch
 torchvision
 huggingface_hub
+tensorboard
