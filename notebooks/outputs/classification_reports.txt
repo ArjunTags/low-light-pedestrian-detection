@@ -1,0 +1,60 @@
+===== Baseline =====
+              precision    recall  f1-score   support
+
+  background      0.848     0.843     0.845      8302
+      person      0.844     0.849     0.846      8302
+
+    accuracy                          0.846     16604
+   macro avg      0.846     0.846     0.846     16604
+weighted avg      0.846     0.846     0.846     16604
+
+===== SE =====
+              precision    recall  f1-score   support
+
+  background      0.915     0.631     0.747      8302
+      person      0.719     0.941     0.815      8302
+
+    accuracy                          0.786     16604
+   macro avg      0.817     0.786     0.781     16604
+weighted avg      0.817     0.786     0.781     16604
+
+===== ECA =====
+              precision    recall  f1-score   support
+
+  background      0.856     0.857     0.856      8302
+      person      0.857     0.855     0.856      8302
+
+    accuracy                          0.856     16604
+   macro avg      0.856     0.856     0.856     16604
+weighted avg      0.856     0.856     0.856     16604
+
+===== CBAM =====
+              precision    recall  f1-score   support
+
+  background      0.938     0.544     0.688      8302
+      person      0.679     0.964     0.797      8302
+
+    accuracy                          0.754     16604
+   macro avg      0.808     0.754     0.742     16604
+weighted avg      0.808     0.754     0.742     16604
+
+===== BAM =====
+              precision    recall  f1-score   support
+
+  background      0.884     0.701     0.782      8302
+      person      0.752     0.908     0.823      8302
+
+    accuracy                          0.805     16604
+   macro avg      0.818     0.805     0.803     16604
+weighted avg      0.818     0.805     0.803     16604
+
+===== SK =====
+              precision    recall  f1-score   support
+
+  background      0.934     0.667     0.778      8302
+      person      0.741     0.953     0.834      8302
+
+    accuracy                          0.810     16604
+   macro avg      0.837     0.810     0.806     16604
+weighted avg      0.837     0.810     0.806     16604
+
